@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Dog, Race, DogsService } from './dogs-races.service';
 
 @Component({
     selector: 'app-list-dogs',
@@ -6,9 +7,29 @@ import { Component, OnInit } from '@angular/core';
     // styleUrls: ['./list-dogs.component.scss']
 })
 export class ListDogsComponent implements OnInit {
-    constructor() {
-        console.log("Dogs List");
-     }
+    dogs: Dog[];
+    races: Race[];
 
-    ngOnInit(): void { }
+    constructor(private dogsService: DogsService) { }
+
+    ngOnInit() {
+        this.getDogs();
+        this.getRaces();
+    }
+
+    getDogs(): void {
+        this.dogsService.getDogs()
+        .subscribe(dogs => this.dogs = dogs)
+    }
+
+    getRaces(): void {
+        this.dogsService.getRaces()
+        .subscribe(races => this.races = races)
+    }
+
+    getRace(id: number) {
+        if(this.races) {
+            return this.races.find( race => race.id == id ).name
+        }
+    }
 }

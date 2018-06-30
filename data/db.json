@@ -1,8 +1,20 @@
 {
-    "dogs": [
-      { "id": 1, "name": "Name1", "race": "1" }
-    ],
-    "races": [
-      { "id": 1, "name": "Race1" }
-    ]
-  }
+  "dogs": [
+    {
+      "id": 1,
+      "name": "Name1",
+      "age": "3",
+      "race": "1"
+    }
+  ],
+  "races": [
+    {
+      "id": 1,
+      "name": "Race1"
+    },
+    {
+      "id": 2,
+      "name": "Race2"
+    }
+  ]
+}

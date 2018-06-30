@@ -9,6 +9,10 @@ describe('ListDogsComponent', () => {
     }).compileComponents();
   }));
   it('should contain list placeholder', async(() => {
+    const fixture = TestBed.createComponent(ListDogsComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('.dogsList').length).toBeGreaterThan(0);
     expect(true).toBeTruthy();
   }));
   it(`should contain dog element`, async(() => {

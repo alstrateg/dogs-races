@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { EditDogComponent } from './edit-dog.component';
 import { ListDogsComponent } from './list-dogs.component';
 import { InfoComponent } from './info.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DogsService } from './dogs-races.service';
 
 const appRoutes: Routes = [
   { path: 'dogs/new', component: EditDogComponent },
@@ -31,9 +33,10 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DogsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
