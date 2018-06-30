@@ -13,10 +13,6 @@
 
 - Very basic styling, content should have a width of 600px, or 300px if the device has a width of less than 620px.
 
-- You are free to choose the framework, but AngularJS, or Angular are preferred.
-
-- To persist data use json-server (https://github.com/typicode/json-server).
-
 - Button to delete (list view) should be its own component (demonstrate inter-component communication).
 
 - List page should have a loading, and an error states. Add tests for list page.
