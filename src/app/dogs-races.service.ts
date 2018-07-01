@@ -85,7 +85,10 @@ export class DogsService {
 
     /** PUT: update the dog on the server */
     updateDog(dog: Dog): Observable<any> {
-        return this.http.put(this.dogsUrl, dog, httpOptions).pipe(
+        const id = typeof dog === 'number' ? dog : dog.id;
+        const url = `${this.dogsUrl}/${id}`;
+
+        return this.http.put(url, dog, httpOptions).pipe(
             tap(_ => this.log(`updated dog id=${dog.id}`)),
             catchError(this.handleError<any>('updateDog'))
         );

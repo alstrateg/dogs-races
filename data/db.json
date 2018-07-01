@@ -2,9 +2,9 @@
   "dogs": [
     {
       "id": 1,
-      "name": "Name1",
+      "name": "Name22",
       "age": 3,
-      "race": "1"
+      "race": "3"
     }
   ],
   "races": [

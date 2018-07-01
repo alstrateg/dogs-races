@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DogAndRace, DogsService } from './dogs-races.service';
 import { forkJoin } from 'rxjs';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'app-list-dogs',
@@ -10,10 +11,15 @@ import { forkJoin } from 'rxjs';
 export class ListDogsComponent implements OnInit {
     dogsAndRace: DogAndRace[] = [];
 
-    constructor(private dogsService: DogsService) { }
+    constructor(private dogsService: DogsService, private router: Router) { }
 
     ngOnInit() {
         this.getDogsAndRaces();
+    }
+
+    editDog(dogId: string){
+        console.log(dogId)
+        this.router.navigate(['/dogs/edit/' + dogId])
     }
 
     getDogsAndRaces() {
