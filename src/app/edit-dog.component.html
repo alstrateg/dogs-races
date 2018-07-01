@@ -11,7 +11,7 @@
 
     <div class="form-group">
         <label for="name">Age</label>
-        <input type="text" class="form-control" id="age" required pattern="^(0?[0-9]|[012][0-9]|30)$" [(ngModel)]="model.age" name="age" #age="ngModel">
+        <input type="number" class="form-control" id="age" required pattern="^(0?[0-9]|[012][0-9]|30)$" [(ngModel)]="model.age" name="age" #age="ngModel">
         <div [hidden]="age.valid || age.pristine" class="alert alert-danger">
             Age is required: number between 0 and 30 inclusively
         </div>

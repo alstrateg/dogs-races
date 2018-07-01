@@ -1,5 +1,3 @@
-- There's a create view (path: /dogs/new), showing a form, to add a new dog.
-
 - There's an update view (path: /dogs/edit/:id), showing a form, to update the dog with a given id.
 
 - Button to delete (list view) should be its own component (demonstrate inter-component communication).

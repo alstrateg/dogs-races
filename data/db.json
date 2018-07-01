@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Name1",
-      "age": "3",
+      "age": 3,
       "race": "1"
     }
   ],
@@ -15,6 +15,18 @@
     {
       "id": 2,
       "name": "Race2"
+    },
+    {
+      "id": 3,
+      "name": "Race3"
+    },
+    {
+      "id": 4,
+      "name": "Race4"
+    },
+    {
+      "id": 5,
+      "name": "Race5"
     }
   ]
 }
