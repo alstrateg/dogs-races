@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DogAndRace, DogsService } from './dogs-races.service';
 import { forkJoin } from 'rxjs';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-list-dogs',
@@ -18,9 +18,12 @@ export class ListDogsComponent implements OnInit {
     }
 
     editDog(dogId: string){
-        console.log(dogId)
         this.router.navigate(['/dogs/edit/' + dogId])
     }
+
+    onDelete(dogId: number) {
+        this.dogsAndRace = this.dogsAndRace.filter(dog => dog.id != dogId)
+      }
 
     getDogsAndRaces() {
         forkJoin(

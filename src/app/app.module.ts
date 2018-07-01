@@ -9,6 +9,7 @@ import { InfoComponent } from './info.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DogsService } from './dogs-races.service';
 import { FormsModule }   from '@angular/forms';
+import { RemoveDogComponent } from './remove-dog.component';
 
 const appRoutes: Routes = [
   { path: 'dogs/new', component: EditDogComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     AppComponent,
     InfoComponent,
     EditDogComponent,
-    ListDogsComponent
+    ListDogsComponent,
+    RemoveDogComponent
   ],
   imports: [
     RouterModule.forRoot(

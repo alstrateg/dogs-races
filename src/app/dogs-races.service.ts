@@ -73,7 +73,7 @@ export class DogsService {
     }
 
     /** DELETE: delete the dog from the server */
-    deleteDog(dog: Dog | number): Observable<Dog> {
+    removeDog(dog: Dog | number): Observable<Dog> {
         const id = typeof dog === 'number' ? dog : dog.id;
         const url = `${this.dogsUrl}/${id}`;
 
