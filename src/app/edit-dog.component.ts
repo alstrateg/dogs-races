@@ -14,13 +14,17 @@ export class EditDogComponent implements OnInit {
         this.getRaces()
         this.route.paramMap.subscribe((params: ParamMap) => {
             let id:number = parseInt(params.get('id'));
-            this.dogsService.getDog(id)
-            .subscribe(dog => this.model = dog)
+            if(id) {
+                this.dogsService.getDog(id)
+                .subscribe(dog => this.model = dog)
+            } else {
+                this.model = new Dog();
+            }
         })
     }
 
     races = []
-    model = new Dog()//new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+    model = new Dog();
 
     submitted = false;
 
