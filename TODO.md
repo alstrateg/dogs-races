@@ -1,8 +1,3 @@
-
-- Entity, a dog, has a name, age, and a race (choose 5 races, one dog will belong to one of your chosen 5 races). Name should consist of lowercase letters, with a length between 5 and 20. Age should be a number between 0 and 30 inclusively.
-
-- There's a list view (path: /dogs), showing a list of dogs, with names, ages, and races. Don't paginate, display all records. Each records has a button to edit, and a button to delete.
-
 - There's a create view (path: /dogs/new), showing a form, to add a new dog.
 
 - There's an update view (path: /dogs/edit/:id), showing a form, to update the dog with a given id.
