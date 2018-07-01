@@ -5,7 +5,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
     selector: 'app-edit-dog',
     templateUrl: './edit-dog.component.html',
-    // styleUrls: ['./edit-dog.component.scss']
+    styleUrls: ['./edit-dog.component.css']
 })
 export class EditDogComponent implements OnInit {
     constructor(private dogsService: DogsService, private router: Router, private route: ActivatedRoute) { }

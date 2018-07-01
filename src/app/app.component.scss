@@ -1,0 +1,19 @@
+.DogsAndRaces {
+    &-nav {
+        
+    }
+    &-navItem {
+        display: inline-block;
+        margin: 0 10px;
+        text-decoration: none;
+        color: gray;
+        text-transform: uppercase;
+        border: solid 1px gray;
+        border-radius: 5px;
+        padding: 10px;
+        
+        &:hover{
+            text-decoration: none;
+        }
+    }
+}

@@ -1,5 +1,23 @@
 <h1>List dogs</h1>
 
-<ul class="dogsList">
-    <li *ngFor="let dog of dogsAndRace" class="dogsList-item">{{dog.name}} {{dog.age}} {{ dog.race }} <button class="dogsListAction-button" (click)="editDog(dog.id)">Edit</button><app-remove-dog [dogId]="dog.id" (deleted)="onDelete($event)" class="dogsListAction-button"></app-remove-dog></li>
+<div *ngIf="isLoading">Loading ...</div>
+<div *ngIf="hasError">Error. Please trye again later</div>
+<ul class="dogsList" *ngIf="!isLoading">
+    <li *ngFor="let dog of dogsAndRace" class="dogsList-item">
+
+            <div class="dogsList-label">
+                Name: {{dog.name}}
+            </div>
+            <div class="dogsList-label">
+                Age: {{dog.age}}
+            </div>
+            <div class="dogsList-label">
+                Race: {{ dog.race }}
+            </div>
+            <div class="dogsList-action">
+                <button class="dogsListAction-button" (click)="editDog(dog.id)">Edit</button>
+                <app-remove-dog [dogId]="dog.id" (deleted)="onDelete($event)" class="dogsListAction-button"></app-remove-dog>
+            </div>
+
+    </li>
 </ul>

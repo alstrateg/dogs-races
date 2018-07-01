@@ -6,10 +6,12 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'app-list-dogs',
     templateUrl: './list-dogs.component.html',
-    // styleUrls: ['./list-dogs.component.scss']
+    styleUrls: ['./list-dogs.component.scss']
 })
 export class ListDogsComponent implements OnInit {
     dogsAndRace: DogAndRace[] = [];
+    isLoading = true;
+    hasError = false;
 
     constructor(private dogsService: DogsService, private router: Router) { }
 
@@ -38,6 +40,13 @@ export class ListDogsComponent implements OnInit {
                         age: dog.age, 
                         race: races.find(race => race.id == dog.race).name
                     }))
+                    this.isLoading = false
+                },
+                error => {
+                    console.log(error)
+                    if(error) {
+                        this.hasError = true;    
+                    }
                 }
             )
     }

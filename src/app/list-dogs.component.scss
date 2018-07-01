@@ -1,0 +1,36 @@
+.dogsList{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+        list-style: none;
+        margin: 0;
+        width: 180px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &-label {
+        list-style: none;
+        margin: 0 0 10px 0;
+        word-wrap: break-word;
+        flex-grow: 1;
+        width: 100%;
+    }
+
+    &-action {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-end;
+        flex-grow: 1;
+    }
+}
