@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Dog, Race, DogsService } from './dogs-races.service';
+import { DogAndRace, DogsService } from './dogs-races.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
     selector: 'app-list-dogs',
@@ -7,29 +8,28 @@ import { Dog, Race, DogsService } from './dogs-races.service';
     // styleUrls: ['./list-dogs.component.scss']
 })
 export class ListDogsComponent implements OnInit {
-    dogs: Dog[];
-    races: Race[];
+    dogsAndRace: DogAndRace[] = [];
 
     constructor(private dogsService: DogsService) { }
 
     ngOnInit() {
-        this.getDogs();
-        this.getRaces();
+        this.getDogsAndRaces();
     }
 
-    getDogs(): void {
-        this.dogsService.getDogs()
-        .subscribe(dogs => this.dogs = dogs)
-    }
-
-    getRaces(): void {
-        this.dogsService.getRaces()
-        .subscribe(races => this.races = races)
-    }
-
-    getRace(id: number) {
-        if(this.races) {
-            return this.races.find( race => race.id == id ).name
-        }
+    getDogsAndRaces() {
+        forkJoin(
+            this.dogsService.getDogs(),
+            this.dogsService.getRaces()
+        )
+            .subscribe(
+                ([dogs, races]) => {
+                    dogs.forEach(dog => this.dogsAndRace.push({
+                        id: dog.id, 
+                        name: dog.name, 
+                        age: dog.age, 
+                        race: races.find(race => race.id == dog.race).name
+                    }))
+                }
+            )
     }
 }
